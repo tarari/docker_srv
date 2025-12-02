@@ -41,7 +41,7 @@ if grep -qE "^${SUBDOMAIN}\s+IN\s+A" $DNS_FILE; then
   exit 5
 fi
 
-echo "${SUBDOMAIN}   IN  A   192.168.0.250" | sudo tee -a $DNS_FILE > /dev/null
+echo "${SUBDOMAIN}   IN  A   10.0.3.250" | sudo tee -a $DNS_FILE > /dev/null
 
 # Incrementar serial (simple: buscar 10 dígits i sumar 1)  no recomanable
 sudo sed -i -E 's/([0-9]{10})/echo $((\1+1))/e' $DNS_FILE
